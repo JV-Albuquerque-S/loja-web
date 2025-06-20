@@ -11,6 +11,7 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
+import logo_devnology from "../../assets/logo_devnology.svg";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
@@ -37,11 +38,13 @@ export function Login() {
         minHeight: "100vh",
         minWidth: "100vw",
         display: "flex",
+        flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "#DFF1FD",
+        backgroundColor: "#EAF7F2",
       }}
     >
+      <img src={logo_devnology} width="25%" alt="logo Devnology" />
       <Box
         sx={{
           width: "20%",
@@ -49,6 +52,7 @@ export function Login() {
           flexDirection: "column",
           alignItems: "center",
           backgroundColor: "#EBF6FE",
+          marginTop: "25px",
           padding: "35px",
           borderRadius: "20px",
           boxShadow: "0 4px 10px rgba(0, 0, 0, 0.43)",
@@ -87,7 +91,7 @@ export function Login() {
             variant="contained"
             onClick={handleSubmit}
             disabled={isDisable}
-            sx={{ mt: 3, mb: 2, fontSize: "14px" }}
+            sx={{ mt: 3, mb: 2, fontSize: "14px", backgroundColor: "#009E60" }}
           >
             Entrar
           </Button>

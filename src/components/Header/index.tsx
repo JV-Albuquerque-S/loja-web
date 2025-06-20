@@ -8,6 +8,7 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
+import logo_devnology from "../../assets/logo_devnology.svg";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import LogoutIcon from "@mui/icons-material/Logout";
 
@@ -43,9 +44,7 @@ export function Header() {
           >
             <Link to="/homepage" style={{ textDecoration: "none" }}>
               <Stack direction="row" alignItems="center" width="172px">
-                <Typography fontSize="20px" fontWeight="650" color="black">
-                  DEVNOLOGY
-                </Typography>
+                <img src={logo_devnology} width="100%" alt="logo Devnology" />
               </Stack>
             </Link>
             <Box
