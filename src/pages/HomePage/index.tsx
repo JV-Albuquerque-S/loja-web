@@ -52,10 +52,6 @@ export function Homepage() {
     fetchProdutos();
   }, [origem]);
 
-  console.log(produtosBR);
-  console.log(produtosEU);
-  console.log(produtosTodos);
-
   return (
     <>
       <Header />
@@ -255,7 +251,7 @@ export function Homepage() {
                       },
                       cursor: "pointer",
                     }}
-                    onClick={() => navigate(`/produto/${produto.id}`)}
+                    onClick={() => navigate(`/produto/${produto.id}/brasil`)}
                   >
                     <CardMedia>
                       <img
@@ -318,7 +314,7 @@ export function Homepage() {
                         },
                         cursor: "pointer",
                       }}
-                      onClick={() => navigate(`/produto/${produto.id}`)}
+                      onClick={() => navigate(`/produto/${produto.id}/europa`)}
                     >
                       <CardMedia>
                         <img
@@ -383,7 +379,9 @@ export function Homepage() {
                         },
                         cursor: "pointer",
                       }}
-                      onClick={() => navigate(`/produto/${produto.id}`)}
+                      onClick={() =>
+                        navigate(`/produto/${produto.id}/${produto.origem}`)
+                      }
                     >
                       <CardMedia>
                         <img

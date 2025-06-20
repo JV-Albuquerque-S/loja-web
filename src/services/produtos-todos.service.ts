@@ -2,6 +2,7 @@ import axios from "axios";
 import type { ProdutosAll } from "../interfaces/produtos-all.interface";
 import type { ProdutoBrasil } from "../interfaces/produtos-br.interface";
 import type { ProdutoEuropa } from "../interfaces/produtos-eu.interface";
+import type { ProdutoRandom } from "../interfaces/produto-random.interface";
 
 const baseURL = "http://localhost:3000";
 
@@ -46,4 +47,16 @@ export async function getProdutosTodos(): Promise<ProdutosAll[]> {
 
   const resultados = await Promise.all(promises);
   return resultados.flat();
+}
+
+export async function getProdutoRandom(
+  id: string,
+  origem: string,
+): Promise<ProdutoRandom> {
+  const { data } = await axios.get<ProdutoRandom>(
+    origem === "brasil"
+      ? `http://localhost:3000/produtos-brasil/${id}`
+      : `http://localhost:3000/produtos-europa/${id}`,
+  );
+  return data;
 }
