@@ -76,7 +76,7 @@ const produtos = [
 export function Homepage() {
   const navigate = useNavigate();
 
-  const [precoRange, setPrecoRange] = useState<[number, number]>([0, 100]);
+  const [precoRange, setPrecoRange] = useState<[number, number]>([0, 1000]);
 
   return (
     <>
@@ -181,7 +181,9 @@ export function Homepage() {
                   "&:hover": {
                     transform: "scale(1.02)",
                   },
+                  cursor: "pointer",
                 }}
+                onClick={() => navigate(`/produto/${produto.id}`)}
               >
                 <CardMedia>
                   <img
@@ -219,7 +221,10 @@ export function Homepage() {
                       "&:hover": { backgroundColor: "#007A4A" },
                       borderRadius: "16px",
                     }}
-                    onClick={() => navigate(`/produto/${produto.id}`)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      navigate(`/produto/${produto.id}+10`);
+                    }}
                   >
                     Adicionar ao carrinho
                   </Button>
