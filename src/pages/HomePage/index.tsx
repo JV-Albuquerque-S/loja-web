@@ -22,63 +22,6 @@ import { getProdutosEuropa } from "../../services/produtos-europa.service";
 import { getProdutosTodos } from "../../services/produtos-todos.service";
 import type { ProdutosAll } from "../../interfaces/produtos-all.interface";
 
-/*const produtos = [
-  {
-    id: 1,
-    nome: "Produto A",
-    preco: 49.99,
-    imagem: "https://via.placeholder.com/150",
-  },
-  {
-    id: 2,
-    nome: "Produto B",
-    preco: 29.99,
-    imagem: "https://loremflickr.com/640/480/people",
-  },
-  {
-    id: 3,
-    nome: "Produto C",
-    preco: 99.9,
-    imagem: "https://via.placeholder.com/150",
-  },
-  {
-    id: 4,
-    nome: "Produto D",
-    preco: 99.9,
-    imagem: "https://via.placeholder.com/150",
-  },
-  {
-    id: 5,
-    nome: "Produto E",
-    preco: 99.9,
-    imagem: "https://via.placeholder.com/150",
-  },
-  {
-    id: 6,
-    nome: "Produto F",
-    preco: 99.9,
-    imagem: "https://via.placeholder.com/150",
-  },
-  {
-    id: 7,
-    nome: "Produto G",
-    preco: 99.9,
-    imagem: "https://via.placeholder.com/150",
-  },
-  {
-    id: 8,
-    nome: "Produto H",
-    preco: 99.9,
-    imagem: "https://via.placeholder.com/150",
-  },
-  {
-    id: 9,
-    nome: "Produto I",
-    preco: 99.9,
-    imagem: "https://via.placeholder.com/150",
-  },
-];*/
-
 export function Homepage() {
   const navigate = useNavigate();
 
