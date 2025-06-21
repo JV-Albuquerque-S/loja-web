@@ -35,6 +35,8 @@ De qualquer forma agradeço pela atenção e pela oportunidade!
 
 ## ▶️ Como rodar o projeto
 
+**A tela de login é apenas estética, é só clicar em ENTRAR**
+
 ### Pré-requisitos:
 
 - Node.js (v18 ou superior)
