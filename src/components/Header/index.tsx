@@ -16,7 +16,7 @@ export function Header() {
   const navigate = useNavigate();
 
   const handleGoToCart = () => {
-    navigate("/cart");
+    navigate("/carrinho");
   };
   const handleLogOut = () => {
     navigate("/");
