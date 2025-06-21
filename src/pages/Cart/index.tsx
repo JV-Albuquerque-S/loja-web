@@ -51,7 +51,7 @@ export function CartPage() {
   return (
     <>
       <Header />
-      <Container sx={{ mt: "100px", mb: 5 }}>
+      <Container maxWidth={false} sx={{ mt: "100px", mb: 5, width: "100vw" }}>
         <Typography variant="h4" gutterBottom>
           Carrinho de Compras
         </Typography>

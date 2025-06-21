@@ -1,54 +1,93 @@
-# React + TypeScript + Vite
+# Devnology E-commerce
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto é um e-commerce com funcionalidades completas de listagem de produtos, visualização individual, carrinho de compras e pedidos. Utiliza tecnologias modernas no frontend (React + MUI) e backend (NestJS).
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚧 Disclaimer
 
-## Expanding the ESLint configuration
+Meu computador teve um problema no início da semana e só fui capaz de consertá-lo na quarta-feira à noite, logo, só tive dois dias para realizar o teste técnico (Quinta e Sexta). Por causa disso, não fui capaz de terminar as funcionalidades completas exigidas no teste, deixando alguns pontos apenas simulados, sendo eles:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Barra de pesquisa de produtos e filtros na barra lateral, exceto o filtro de Região, que filtra corretamente entre os dados do Brasil e os dados da Europa, ou a fusão dos dois.
+- As páginas Carrinho de Compras e Meus Pedidos apenas renderizam um array de objetos estático na página.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+Espero que ainda assim o código tenha qualidade o suficiente para avançar nesse processo seletivo :)
+
+De qualquer forma agradeço pela atenção e pela oportunidade!
+
+## 🧰 Tecnologias utilizadas
+
+### Frontend:
+
+- React
+- React Router
+- Material UI (MUI)
+- TypeScript
+
+### Backend:
+
+- NestJS
+- Prisma ORM
+- Axios
+- TypeScript
+
+---
+
+## ▶️ Como rodar o projeto
+
+### Pré-requisitos:
+
+- Node.js (v18 ou superior)
+- NPM ou Yarn
+
+### Rodando o Frontend:
+
+```bash
+# Acesse a pasta do frontend
+cd frontend
+
+# Instale as dependências
+npm install
+
+# Inicie o servidor de desenvolvimento
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+O frontend estará disponível em: http://localhost:5173
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Rodando o Backend:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+# Acesse a pasta do backend
+cd backend
+
+# Instale as dependências
+npm install
+
+# Gere o cliente Prisma (mesmo sem banco real)
+npx prisma generate
+
+# Inicie o servidor
+npm run start:dev
 ```
+
+O backend estará disponível em: http://localhost:3000
+
+---
+
+## 🧠 Decisões Técnicas
+
+### Frontend:
+
+- Utilização do Material UI para uma interface moderna e responsiva.
+- React Router para navegação entre páginas.
+- Tela de carrinho consome dados do backend, que acessa APIs externas de acordo com a origem do produto.
+- Tipos de produtos foram unificados para facilitar o reuso de componentes entre Brasil e Europa.
+
+### Backend:
+
+- Implementado com NestJS e organização por módulos (produtos do Brasil, Europa, carrinho).
+- Prisma utilizado apenas para persistência dos IDs dos produtos no carrinho.
+- **Não é necessário configurar banco local** para rodar a aplicação, já que a persistência é simulada.
+
+---
